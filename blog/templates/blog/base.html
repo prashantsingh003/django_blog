@@ -83,10 +83,16 @@
                         <i class="fa-regular fa-user"></i>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="sideNav">
-                      <li><a class="dropdown-item" href="#">Log In</a></li>
-                      <li><a class="dropdown-item" href="{% url 'register' %}">Sign In</a></li>
-                      <li><a class="dropdown-item" href="#">Log Out</a></li>
-                    </ul>
+                    {% if user.is_authenticated %}
+                        <li><a class="dropdown-item text-capitalize" href="{% url 'profile' %}">
+                            <i class="fa-regular fa-user"></i>
+                            {{user.username}}
+                        </a></li>
+                        <li><a class="dropdown-item" href="{% url 'logout' %}">Log Out</a></li>
+                    {% else %}
+                        <li><a class="dropdown-item" href="{% url 'login' %}">Log In</a></li>
+                        <li><a class="dropdown-item" href="{% url 'register' %}">Sign In</a></li>
+                    {% endif %}</ul>
                 </span>
             </div>
         </nav>
@@ -110,7 +116,7 @@
                         <div class="card-text">
                             <p>Side navigation bar</p>
                             <ul class="list-group">
-                                <li class="list-group-item">An item</li>
+                                <li class="list-group-item">{{user}}</li>
                                 <li class="list-group-item">A second item</li>
                                 <li class="list-group-item">A third item</li>
                               </ul>
