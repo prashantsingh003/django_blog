@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -128,6 +129,11 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+# full path to store uploaded files
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+# Public url for that directory
+MEDIA_URL='/media/'
 
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
