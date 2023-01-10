@@ -5,6 +5,4 @@
     --nav-padding:calc(((100% - var(--content-width)) / 2) + 1rem);
     padding: 0 var(--nav-padding);
 }
-/* .navbar{
-    background-color:#0000ff;
-} */
+/* --bs-primary */

@@ -1,14 +1,34 @@
 {% extends 'blog/base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-    <div class="card">
-        <div class="card-body">
-            <img class="rounded-circle" alt="" src="{{user.profile.image.url}}">
-            <div>
-                <h2>{{user.username}}</h2>
-                <p class="text-secondary">{{user.email}}</p>
+    <div class="card shadow">
+        <div class="card-body row justify-content-center">
+            <div style="max-width: 300px;" class="p-0 p-sm-3 col-12 col-sm-auto">
+                <img class="rounded-circle img-fluid" alt="" src="{{user.profile.image.url}}">
+            </div>
+            <div class="col-12 col-sm-auto d-flex align-items-center">
+                <div style="display: grid;align-items:center;">
+                    <h2 class="text-capitalize">{{user.username}}</h2>
+                    <p class="text-secondary">{{user.email}}</p>
+                </div>
+            </div>
+
+            <div><hr></div>
+
+            <!-- FORMS -->
+            <div class="col-12 ">
+                <form method="POST">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4">Profile Info</legend>
+                        {{ u_form | crispy }}
+                        {{ p_form | crispy }}
+                    </fieldset>
+                    <div class="form-group">
+                        <button class="btn-outline-primary btn w-100" type="submit">Update</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-    <h1 class="text-capitalize">{{user.username}}</h1>
 {% endblock content %}
