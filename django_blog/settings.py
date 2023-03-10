@@ -137,6 +137,6 @@ MEDIA_URL='/media/'
 
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
-LOGIN_REDIRECT_URL = 'blog-home'
+LOGIN_REDIRECT_URL = 'profile'
 
 LOGIN_URL='login'
