@@ -21,7 +21,7 @@
                 <div style="opacity: 0.5;">
                     <hr class="my-2">
                 </div>
-                <div class="card-title h3">{{ post.title }}</div>
+                <div class="card-title h3"><a href="{% url 'post-detail' post.id %}">{{ post.title }}</a></div>
                 <p class="card-text">{{ post.content }}</p>
             </div>
         </div>
