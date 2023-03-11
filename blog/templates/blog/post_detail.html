@@ -13,7 +13,9 @@
             </div>
             <div>
                 <div class="d-flex small">
-                    <div class="text-capitalize text-primary">{{ object.author }}</div>
+                    <div class="text-capitalize text-primary">
+                        <a href="{% url 'user-posts' post.author.username %}" style="text-decoration: none;">{{ object.author }}</a>
+                    </div>
                     <span class="mx-2" style="opacity: 0.5;">></span>
                     <div class="text-secondary">{{ object.date_posted | date:"F d, Y" }}</div>
                     {% if object.author == user %}
