@@ -1,5 +1,6 @@
 :root{
     --content-width:1500px;
+    /* --bs-body-font-size: 2rem; */
 }
 .blog-nav{
     --nav-padding:calc(((100% - var(--content-width)) / 2) + 1rem);
